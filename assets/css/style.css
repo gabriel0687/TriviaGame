@@ -1,0 +1,119 @@
+body{
+    background-image: url("../images/back.jpg");
+    background-size: 50%;
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+}
+
+h2{
+    font-size: 60px;
+    color:black;
+}
+
+h3{
+    color:red;
+    font-size: 65px;
+}
+
+p{
+    font-size: 35px;
+    color: yellow;
+}
+
+#splashscreen {
+    width: 55%;
+    margin: 0 auto;
+}
+
+#start-btn {
+    background-color:blue;
+    width: 60%;
+    height: 70px;
+    font-size: 30px;
+    color: white;
+}
+
+#sub-but{
+    background-color:green;
+    color: white;
+    width: 25%;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.splashBox {
+    margin: 0 auto;
+    text-align: center;
+    padding: 5%;
+    margin-top: 30%;
+}
+
+.splashBox2 {
+    margin: 0 auto;
+    text-align: center;
+    padding: 5%;
+    margin-top: 30px;
+}
+
+#answerScreen {
+    background-image: url("../images/italia.jpg");
+    background-size: 105%;
+    display: none;
+    width: 55%;
+    margin: 0 auto;
+    padding: 5%;
+    margin-top: 10%;
+    font-size: 30px;
+}
+
+.wrongBox {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#timesUp {
+    background-image: url("../images/juve.jpg");
+    background-size: 100%;
+    display: none;
+    width: 55%;
+    margin: 0 auto;
+    padding: 3px;
+    margin-top: 17%;
+    font-size: 21px;
+}
+
+.up {
+    color:green;
+}
+
+.timeRemain {
+    padding: 2%;
+    color:white;
+    font-size: 40px;
+}
+
+#time-remain {
+    font-size: 60px;
+    color:red;
+}
+
+header {
+    font-size: 60px;
+    color:green;
+    margin-top: 2%;
+}
+
+.container {
+    text-align: center;
+    display: none;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.questions {
+    font-size: 30px;
+    color: white;
+}
