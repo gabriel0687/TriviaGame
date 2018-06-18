@@ -71,25 +71,28 @@ var questions = [{
 
 var labels = ["first", "second", "third", "forth"];
 
+// funtion to click start and display questions //
 var startGame = $("#start-btn").on('click', function() {
 $(this).parent().hide();
 $('.container').show();
 countdown(60);
 questionDisplay();
 });
-
+// function for displaying questions
 var questionDisplay = function() {
 $(".questions :not('#sub-but')").empty();
+// created a loop through the questions 
 for (var j = 0; j < 10; j++) {
 $('.questions').prepend('<div class="' + questions[j].name + '"></div>');
 $(questions[j].divClass).append('<div class ="ques-title">' + questions[j].ques + '</div>');
+ // created a loop through answers for each button
 for (var i = 0; i <= 3; i++) {
 $(questions[j].divClass).append('<input type="radio"  name="' + questions[j].name + '" value="' + questions[j].ans[i] + '"/><label for="' + labels[i] + '">' + questions[j].ans[i] + '</label>');
 }
 $('.questions').prepend('<hr />');
 }
 }
-
+// countdown timer
 var countdown = function(seconds) {
 var timer = setInterval(function() {
 seconds = seconds - 1;
@@ -99,15 +102,16 @@ if (seconds <= 0) {
     $('.container').fadeOut(500);
     var correctAnswers = 0;
     var wrongAnswers = 0;
-    
+// loop through correctArray & radioName to match html elements & answers
 for (var i = 0; i < 10; i++) {
 
 if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
-
+// show correct answers in console
 correctAnswers++;
 console.log("this is correct! number:" + i)
 } 
 else {
+// show wrong answers in console
 wrongAnswers++;
 console.log("this is wrong! number:" + i)
 };
@@ -121,16 +125,16 @@ clearInterval(timer);
 return;
 }
 }, 1000);
-
+// click event for submit button to stop timer
 $('#sub-but').on('click', function() {
 clearInterval(timer);
 })
 };
-
+// this grade quiz once submit button is clicked
 var gradeQuiz = $('#sub-but').on('click', function() {
 var correctAnswers = 0;
 var wrongAnswers = 0;
-
+// loop through correctArray & radioName to match html elements & answers
 for (var i = 0; i < 10; i++) {
 if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
@@ -142,10 +146,14 @@ wrongAnswers++;
 console.log("this is wrong! number:" + i)
 };
 };
-
+// once submit is clicked the timer stops
 countdown();
+// fade out questions
 $('.container').fadeOut(500);
+// show answers 
 $('#answerScreen').show();
+// show correct answers 
 $('#correctScreen').append(correctAnswers);
+// show wrong answers
 $('#wrongScreen').append(wrongAnswers);
 }); 
